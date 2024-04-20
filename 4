@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() {
+    float arr[] = {7, 35, 2, 9, 6}; 
+    int size = sizeof(arr) / sizeof(arr[0]);
+    printf("Исходный массив:\n");
+    for(int i = 0; i < size; i++) {
+        printf("%.0f ", arr[i]);
+    }
+    printf("\n");
+    for(int i = 0; i < size; i++) {
+        arr[i] = arr[i] * arr[i]; 
+    }
+    printf("Преобразованный массив:\n");
+    for(int i = 0; i < size; i++) {
+        printf("%.0f ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
