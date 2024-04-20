@@ -1,0 +1,71 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+int main() {
+    char choice;
+    cout << "Выберите функцию для выполнения:\n";
+    cout << "1. Подсчет отрицательных элементов в массиве\n";
+    cout << "2. Сумма квадратов положительных элементов в массиве\n";
+    cout << "3. Сумма квадратов отрицательных элементов в массиве\n";
+    cout << "4. Преобразование элементов массива в квадраты\n";
+    cin >> choice;
+    switch (choice) {
+        case '1': {
+            int a[] = {63, -5, 17, 6, -3}; 
+            int size = sizeof(a) / sizeof(a[0]); 
+            int N = 0; 
+        cout << "Подсчет отрицательных элементов в массиве: ";
+            for (int i = 0; i < size; i++) {
+                if (a[i] < 0) {
+                    N++;
+                }
+            }
+            cout << N << endl;
+            break;
+        }
+        case '2': {
+            double a1[] = {-67, 13, 2, -1, 6};
+            int size1 = sizeof(a1) / sizeof(a1[0]);
+            double s1 = 0.0; 
+            cout << "Сумма квадратов положительных эллементов в массиве: ";
+            for (int i = 0; i < size1; i++) {
+                if (a1[i] > 0) {
+                    s1 += pow(a1[i], 2); 
+                }
+            }
+            cout << s1 << endl;
+            break;
+        }
+        case '3': {
+            double a2[] = {-3 , 23, -324, -9, 4};
+            int size2 = sizeof(a2) / sizeof(a2[0]);
+            double s2 = 0.0; 
+            cout << "Сумма квадратов отрицательных элементов в массиве: ";
+            for (int i = 0; i < size2; i++) {
+                if (a2[i] < 0) {
+                    s2 += pow(a2[i], 2); 
+                }
+            }
+            cout << s2 << endl;
+            break;
+        }
+        case '4': {
+            vector<double> a3 = {7, 35, 2, 9, 6}; 
+            int size3 = a3.size(); 
+            for (int i = 0; i < size3; i++) {
+                a3[i] = pow(a3[i], 2); 
+            }
+            cout << "Преобразованный массив: ";
+            for (int i = 0; i < size3; i++) {
+                cout << a3[i] << " ";
+            }
+            cout << endl;
+            break;
+        }
+        default:
+            cout << "Неверный выбор. Пожалуйста, выберите от 1 до 4.\n";
+            break;
+    }
+    return 0;
+}
